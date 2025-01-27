@@ -29,7 +29,7 @@ const Editor = ({ initData, onSubmit }) => {
     let value = e.target.value;
 
     if (name === "createdDate") {
-      value = new Date(value).getTime();
+      value = new Date(value);
     }
 
     setInput({
@@ -38,7 +38,7 @@ const Editor = ({ initData, onSubmit }) => {
     });
   };
 
-  const onClickSubmitButton = () => {
+  const onSubmitButtonClick = () => {
     onSubmit(input);
   };
 
@@ -80,12 +80,12 @@ const Editor = ({ initData, onSubmit }) => {
           value={input.content}
           onChange={onChangeInput}
           placeholder="오늘은 어땠나요?"
-        ></textarea>
+        />
       </section>
       <section className="button_section">
         <Button onClick={() => nav(-1)} text={"취소하기"} />
         <Button
-          onClick={onClickSubmitButton}
+          onClick={onSubmitButtonClick}
           text={"작성완료"}
           type={"POSITIVE"}
         />
