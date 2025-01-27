@@ -16,11 +16,11 @@ const DiaryItem = ({ id, emotionId, createdDate, content }) => {
       </div>
       <div onClick={() => nav(`/diary/${id}`)} className="info_section">
         <div className="create_date">
-          {new Date(createdDate).toLocaleString()}
+          {new Date(createdDate).toLocaleDateString()}
         </div>
         <div className="content">{content}</div>
       </div>
-      <div className="button_section">
+      <div className="button_szection">
         <Button onClick={() => nav(`/edit/${id}`)} text={"수정하기"} />
       </div>
     </div>
